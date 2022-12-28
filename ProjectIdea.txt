@@ -1,0 +1,9 @@
+﻿Project proposal
+
+Project objective
+The objective of the project is for incoming guests to be able to make a booking by inserting their information.
+
+Project description
+This is project will design a hotel booking system for incoming guests.
+
+Timeframe for this project
