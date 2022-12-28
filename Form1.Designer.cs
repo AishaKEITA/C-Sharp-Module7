@@ -47,30 +47,34 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmbBirthdayMonth = new System.Windows.Forms.ComboBox();
-            this.cmbDay = new System.Windows.Forms.ComboBox();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.grpYourChoice = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnCalculateBill = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.cmbDay = new System.Windows.Forms.ComboBox();
+            this.cmbBirthdayMonth = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.grpYourChoice = new System.Windows.Forms.GroupBox();
+            this.btnCalculateBill = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnEditBooking = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblPriceToBePaid = new System.Windows.Forms.Label();
             this.lblShowPrice = new System.Windows.Forms.Label();
             this.grpTotalPrice = new System.Windows.Forms.GroupBox();
+            this.lstGuest = new System.Windows.Forms.ListView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.grpYourChoice.SuspendLayout();
             this.grpTotalPrice.SuspendLayout();
@@ -81,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 33);
+            this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "First name";
             // 
@@ -253,16 +257,45 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Guest contact info";
             // 
-            // label9
+            // btnAddGuest
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(427, 49);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(572, 42);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Sha Hotel Guest Booking System";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.btnAddGuest.Location = new System.Drawing.Point(193, 558);
+            this.btnAddGuest.Name = "btnAddGuest";
+            this.btnAddGuest.Size = new System.Drawing.Size(298, 42);
+            this.btnAddGuest.TabIndex = 21;
+            this.btnAddGuest.Text = "Add guest";
+            this.btnAddGuest.UseVisualStyleBackColor = true;
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(417, 180);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(153, 31);
+            this.txtYear.TabIndex = 20;
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Location = new System.Drawing.Point(176, 236);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(235, 33);
+            this.cmbGender.TabIndex = 19;
+            // 
+            // cmbDay
+            // 
+            this.cmbDay.FormattingEnabled = true;
+            this.cmbDay.Location = new System.Drawing.Point(309, 177);
+            this.cmbDay.Name = "cmbDay";
+            this.cmbDay.Size = new System.Drawing.Size(102, 33);
+            this.cmbDay.TabIndex = 18;
+            // 
+            // cmbBirthdayMonth
+            // 
+            this.cmbBirthdayMonth.FormattingEnabled = true;
+            this.cmbBirthdayMonth.Location = new System.Drawing.Point(176, 172);
+            this.cmbBirthdayMonth.Name = "cmbBirthdayMonth";
+            this.cmbBirthdayMonth.Size = new System.Drawing.Size(121, 33);
+            this.cmbBirthdayMonth.TabIndex = 17;
             // 
             // label10
             // 
@@ -273,36 +306,16 @@
             this.label10.TabIndex = 16;
             this.label10.Text = "Last name";
             // 
-            // cmbBirthdayMonth
+            // label9
             // 
-            this.cmbBirthdayMonth.FormattingEnabled = true;
-            this.cmbBirthdayMonth.Location = new System.Drawing.Point(176, 172);
-            this.cmbBirthdayMonth.Name = "cmbBirthdayMonth";
-            this.cmbBirthdayMonth.Size = new System.Drawing.Size(121, 33);
-            this.cmbBirthdayMonth.TabIndex = 17;
-            // 
-            // cmbDay
-            // 
-            this.cmbDay.FormattingEnabled = true;
-            this.cmbDay.Location = new System.Drawing.Point(309, 177);
-            this.cmbDay.Name = "cmbDay";
-            this.cmbDay.Size = new System.Drawing.Size(102, 33);
-            this.cmbDay.TabIndex = 18;
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(176, 236);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(235, 33);
-            this.cmbGender.TabIndex = 19;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(417, 180);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(153, 31);
-            this.txtYear.TabIndex = 20;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(427, 49);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(572, 42);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Sha Hotel Guest Booking System";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // grpYourChoice
             // 
@@ -324,81 +337,14 @@
             this.grpYourChoice.TabStop = false;
             this.grpYourChoice.Text = "Your choice";
             // 
-            // comboBox1
+            // btnCalculateBill
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(216, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 33);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(216, 88);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(279, 33);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(216, 159);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(283, 33);
-            this.comboBox3.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 231);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(156, 25);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Check in [date]";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 295);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(167, 25);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Departure [date]";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(216, 228);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(279, 33);
-            this.comboBox5.TabIndex = 6;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(216, 287);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(274, 33);
-            this.comboBox6.TabIndex = 7;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(147, 25);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Guest number";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 96);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 25);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Room type";
+            this.btnCalculateBill.Location = new System.Drawing.Point(177, 359);
+            this.btnCalculateBill.Name = "btnCalculateBill";
+            this.btnCalculateBill.Size = new System.Drawing.Size(211, 46);
+            this.btnCalculateBill.TabIndex = 11;
+            this.btnCalculateBill.Text = "Calculate bill";
+            this.btnCalculateBill.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -409,27 +355,85 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "Floor";
             // 
-            // btnCalculateBill
+            // label14
             // 
-            this.btnCalculateBill.Location = new System.Drawing.Point(177, 359);
-            this.btnCalculateBill.Name = "btnCalculateBill";
-            this.btnCalculateBill.Size = new System.Drawing.Size(211, 46);
-            this.btnCalculateBill.TabIndex = 11;
-            this.btnCalculateBill.Text = "Calculate bill";
-            this.btnCalculateBill.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(19, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(115, 25);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Room type";
             // 
-            // btnAddGuest
+            // label13
             // 
-            this.btnAddGuest.Location = new System.Drawing.Point(193, 558);
-            this.btnAddGuest.Name = "btnAddGuest";
-            this.btnAddGuest.Size = new System.Drawing.Size(298, 42);
-            this.btnAddGuest.TabIndex = 21;
-            this.btnAddGuest.Text = "Add guest";
-            this.btnAddGuest.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(297, 33);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Choose guest number";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(216, 287);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(274, 33);
+            this.comboBox6.TabIndex = 7;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(216, 228);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(279, 33);
+            this.comboBox5.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 295);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(167, 25);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Departure [date]";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 231);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(156, 25);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Check in [date]";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(216, 159);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(283, 33);
+            this.comboBox3.TabIndex = 2;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(216, 88);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(279, 33);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(216, 35);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(279, 33);
+            this.comboBox1.TabIndex = 0;
             // 
             // btnEditBooking
             // 
-            this.btnEditBooking.Location = new System.Drawing.Point(823, 686);
+            this.btnEditBooking.Location = new System.Drawing.Point(1354, 480);
             this.btnEditBooking.Name = "btnEditBooking";
             this.btnEditBooking.Size = new System.Drawing.Size(181, 56);
             this.btnEditBooking.TabIndex = 22;
@@ -438,7 +442,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1057, 686);
+            this.btnDelete.Location = new System.Drawing.Point(1590, 480);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(201, 56);
             this.btnDelete.TabIndex = 23;
@@ -450,9 +454,9 @@
             this.lblPriceToBePaid.AutoSize = true;
             this.lblPriceToBePaid.Location = new System.Drawing.Point(28, 66);
             this.lblPriceToBePaid.Name = "lblPriceToBePaid";
-            this.lblPriceToBePaid.Size = new System.Drawing.Size(162, 25);
+            this.lblPriceToBePaid.Size = new System.Drawing.Size(224, 33);
             this.lblPriceToBePaid.TabIndex = 0;
-            this.lblPriceToBePaid.Text = "Price to be paid";
+            this.lblPriceToBePaid.Text = "Price to be paid:";
             // 
             // lblShowPrice
             // 
@@ -468,16 +472,56 @@
             this.grpTotalPrice.Controls.Add(this.lblPriceToBePaid);
             this.grpTotalPrice.Location = new System.Drawing.Point(790, 566);
             this.grpTotalPrice.Name = "grpTotalPrice";
-            this.grpTotalPrice.Size = new System.Drawing.Size(550, 114);
+            this.grpTotalPrice.Size = new System.Drawing.Size(550, 171);
             this.grpTotalPrice.TabIndex = 21;
             this.grpTotalPrice.TabStop = false;
             this.grpTotalPrice.Text = "Total price";
+            // 
+            // lstGuest
+            // 
+            this.lstGuest.HideSelection = false;
+            this.lstGuest.Location = new System.Drawing.Point(1330, 130);
+            this.lstGuest.Name = "lstGuest";
+            this.lstGuest.Size = new System.Drawing.Size(502, 337);
+            this.lstGuest.TabIndex = 24;
+            this.lstGuest.UseCompatibleStateImageBehavior = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1338, 95);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(92, 33);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Guest";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1504, 95);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 33);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "Arrival";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1709, 95);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(143, 33);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "Departure";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1844, 828);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lstGuest);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEditBooking);
             this.Controls.Add(this.grpTotalPrice);
@@ -545,6 +589,10 @@
         private System.Windows.Forms.Label lblPriceToBePaid;
         private System.Windows.Forms.Label lblShowPrice;
         private System.Windows.Forms.GroupBox grpTotalPrice;
+        private System.Windows.Forms.ListView lstGuest;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }
 
