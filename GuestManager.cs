@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,7 +57,56 @@ namespace Assignmment7
             return true;
         }
 
+        /// <summary>
+        /// method to add a guest
+        /// </summary>
+        /// <param name="GuestIn"></param>
+        /// <returns></returns>
+        public bool AddGuest (Guest GuestIn)
+        {
+            if (guests == null)
+                return false;
+            guests.Add(GuestIn);
+            return true ;
+        }
 
+        /// <summary>
+        /// return the position of the and see if is greater and equal 0
+        /// and less than the number of guest
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public bool CheckIndex(int index)
+        {
+            return (index >= 0) && (index < guests.Count);
+        }
+
+        /// <summary>
+        /// method to get participant at a certain position
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public Guest GetGuest(int index)
+        {
+            if (CheckIndex(index))
+                return guests[index];
+
+            return null;
+        }
+
+        /// <summary>
+        /// method to change participant
+        /// </summary>
+        /// <param name="GuestIn"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public bool ChangeGuestAt(Guest GuestIn, int index)
+        {
+            if ((GuestIn == null) || !CheckIndex(index))
+                return false;
+             guests[index] = GuestIn;
+            return true;
+        }
     }
 
 }
