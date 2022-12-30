@@ -16,7 +16,13 @@ namespace Assignmment7
         private int year;
         private double month;
         private double day;
+        private int numberOfRooms;
+        private DateTime _checkIn;
+        private DateTime _checkOut;
+        private double totalPrice;
 
+        private Floors floor;
+        private RoomTypes roomType;
         private Gender gender;
         private Address address;
 
@@ -36,7 +42,10 @@ namespace Assignmment7
         /// <param name="phoneNumber"></param>
         /// <param name="email"></param>
         /// <param name="year"></param>
-        public Guest(string firstName, string lastName, int phoneNumber, string email, int year, int day, int month, Gender gender, Address address)
+        public Guest(string firstName, string lastName, int phoneNumber,
+            string email, int year, int day, int month, Gender gender, Address address,
+            int numberOfRooms, int floors,
+            DateTime checkIn, DateTime checkOut, RoomTypes roomType, Floors floor)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -46,6 +55,11 @@ namespace Assignmment7
             this.day = day;
             this.month = month;
             this.gender = gender;
+            this.numberOfRooms = numberOfRooms;
+            this.floor = floor;
+            _checkIn = checkIn;
+            _checkOut = checkOut;
+            this.roomType = roomType;
 
 
             if (address != null)
@@ -69,6 +83,10 @@ namespace Assignmment7
             email = theOther.email;
             year = theOther.year;
             this.address = new Address(theOther.address);
+            this.numberOfRooms = theOther.numberOfRooms;
+            this.floor = theOther.floor;
+            _checkIn = theOther._checkIn;
+            _checkOut = theOther._checkOut;
         }
 
         /// <summary>
@@ -179,6 +197,106 @@ namespace Assignmment7
             {
                 email = value;
             }
+        }
+
+        /// <summary>
+        /// geter for number of rooms
+        /// </summary>
+        /// <returns></returns>
+        public int GetNumberOfRooms()
+        {
+            return numberOfRooms;
+        }
+
+        /// <summary>
+        /// setter fot number of rooms
+        /// </summary>
+        /// <param name="numberOfRooms"></param>
+        public void SetNumberOfRooms(int numberOfRooms)
+        {
+            if (numberOfRooms >= 0)
+                this.numberOfRooms = numberOfRooms;
+        }
+
+        /// <summary>
+        /// method to get and set room types
+        /// </summary>
+        public RoomTypes RoomTypes
+        {
+            get { return roomType; }
+            set { roomType = value; }
+        }
+
+        /// <summary>
+        /// method to get and sett floors
+        /// </summary>
+        public Floors Floors
+        {
+            get { return floor; }
+            set { floor = value; }
+        }
+
+        /// <summary>
+        /// method to check in
+        /// </summary>
+        private DateTime CheckIn
+        {
+            get { return _checkIn; }
+            set
+            {
+                if (value != _checkIn && value < _checkOut)
+                {
+                    _checkIn = value;
+                }
+                //Ui update for totalprice
+                totalPrice = CalculateTotalPrice();
+            }
+        }
+
+        /// <summary>
+        /// method to checkout
+        /// </summary>
+        private DateTime CheckOut
+        {
+            get { return _checkOut; }
+            set
+            {
+                if (value != _checkOut && value < _checkIn)
+                {
+                    _checkOut = value;
+                }
+                //ui update for totalprice
+                totalPrice = CalculateTotalPrice();
+            }
+        }
+
+        /// <summary>
+        /// method to get total price
+        /// </summary>
+        /// <returns></returns>
+        public double GetTotalPrice()
+        {
+            return totalPrice;
+        }
+
+        /// <summary>
+        /// method to set total price
+        /// </summary>
+        /// <param name="totalPrice"></param>
+        public void SetTotalPrice(double totalPrice)
+        {
+            if (totalPrice != 0.0)
+                this.totalPrice = totalPrice;
+        }
+
+        /// <summary>
+        /// method to calculate total price
+        /// </summary>
+        /// <returns></returns>
+        private double CalculateTotalPrice()
+        {
+            double amountPerDay = 1500;
+            return (CheckOut - CheckIn).TotalDays * amountPerDay;
         }
     }
 }
