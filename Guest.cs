@@ -13,10 +13,8 @@ namespace Assignmment7
         private string lastName;
         private int phoneNumber;
         private string email;
-        private int year;
-        private double month;
-        private double day;
         private int numberOfRooms;
+        private DateTime _birthday;
         private DateTime _checkIn;
         private DateTime _checkOut;
         private double totalPrice;
@@ -35,30 +33,35 @@ namespace Assignmment7
         }
 
         /// <summary>
-        /// guest constructor with parameter
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
         /// <param name="phoneNumber"></param>
         /// <param name="email"></param>
-        /// <param name="year"></param>
+        /// <param name="gender"></param>
+        /// <param name="address"></param>
+        /// <param name="numberOfRooms"></param>
+        /// <param name="floors"></param>
+        /// <param name="checkIn"></param>
+        /// <param name="checkOut"></param>
+        /// <param name="birthday"></param>
+        /// <param name="roomType"></param>
+        /// <param name="floor"></param>
         public Guest(string firstName, string lastName, int phoneNumber,
-            string email, int year, int day, int month, Gender gender, Address address,
+            string email, Gender gender, Address address,
             int numberOfRooms, int floors,
-            DateTime checkIn, DateTime checkOut, RoomTypes roomType, Floors floor)
+            DateTime checkIn, DateTime checkOut, DateTime birthday, RoomTypes roomType, Floors floor)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
             this.email = email;
-            this.year = year;
-            this.day = day;
-            this.month = month;
             this.gender = gender;
             this.numberOfRooms = numberOfRooms;
             this.floor = floor;
             _checkIn = checkIn;
             _checkOut = checkOut;
+            _birthday = birthday;
             this.roomType = roomType;
 
 
@@ -81,12 +84,29 @@ namespace Assignmment7
             lastName = theOther.lastName;
             phoneNumber = theOther.phoneNumber;
             email = theOther.email;
-            year = theOther.year;
             this.address = new Address(theOther.address);
             this.numberOfRooms = theOther.numberOfRooms;
             this.floor = theOther.floor;
             _checkIn = theOther._checkIn;
             _checkOut = theOther._checkOut;
+            _birthday = theOther._birthday;
+        }
+
+        public Guest(string firstName, string lastName, int phoneNumber,
+            string email,int numberOfRooms, Floors floor, RoomTypes roomType, Gender gender, DateTime checkIn, DateTime checkOut, DateTime birthday, Address address)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.numberOfRooms = numberOfRooms;
+            this.floor = floor;
+            this.roomType = roomType;
+            this.gender = gender;
+            CheckIn = checkIn;
+            CheckOut = checkOut;
+            this.address = address;
+            BirthdayDateTime = birthday;
         }
 
         /// <summary>
@@ -125,59 +145,8 @@ namespace Assignmment7
         }
 
         /// <summary>
-        /// method to get year
-        /// </summary>
-        public int GetYear()
-        {
-            return year;
-        }
-        /// <summary>
-        /// method to set year
-        /// </summary>
-        /// <param name="year"></param>
-        public void SetYear(int year)
-        {
-            if (year >= 0.0)
-                this.year = year;
-        }
-
-        /// <summary>
-        /// method to get day
-        /// </summary>
-        public double GetDay()
-        {
-            return day;
-        }
-
-        /// <summary>
-        /// method to set day
-        /// </summary>
-        /// <param name="day"></param>
-        public void SetDay(double day)
-        {
-            if (day >= 0.0)
-                this.day = day;
-        }
-        /// <summary>
-        /// method to get month
-        /// </summary>
-        public double GetMonth()
-        {
-            return month;
-        }
-
-        /// <summary>
-        /// method to set month
-        /// </summary>
-        /// <param name="month"></param>
-        public void SetMonth(double month)
-        {
-            this.month = month;
-        }
-        /// <summary>
         /// method to get and set phone number
         /// </summary>
-        ///
         public int PhoneNumber
         {
             get { return phoneNumber; }
@@ -199,6 +168,11 @@ namespace Assignmment7
             }
         }
 
+        public DateTime BirthdayDateTime
+        {
+            get { return birthday; }
+            set { birthday = value; }
+        }
         /// <summary>
         /// geter for number of rooms
         /// </summary>
