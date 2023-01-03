@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignmment7
@@ -25,8 +18,19 @@ namespace Assignmment7
             this.Text = "Sha Hotel Boking system designed by Aisha";
             cmbGender.Items.AddRange(Enum.GetNames(typeof(Gender)));
             cmbGender.SelectedIndex = (int)Gender.Female;
-        }
+            cmbNumberOfGuest.Items.AddRange(Enum.GetNames(typeof(NumberOfGuest)));
+            cmbNumberOfGuest.SelectedIndex = (int)NumberOfGuest.Adult0;
 
+            cmbNumberOfChildren.Items.AddRange(Enum.GetNames(typeof(NumberOfChildren)));
+            cmbNumberOfChildren.SelectedIndex = (int)NumberOfChildren.child0;
+
+
+            cmbRoomType.Items.AddRange(Enum.GetNames(typeof(RoomTypes)));
+            cmbRoomType.SelectedIndex = (int)RoomTypes.Single;
+
+            cmbFloor.Items.AddRange(Enum.GetNames(typeof(Floors)));
+            cmbFloor.SelectedIndex = (int)Floors.One;
+        }
         /// <summary>
         /// read guest first name, last name,  email and phone number
         /// </summary>
@@ -34,15 +38,20 @@ namespace Assignmment7
         private Guest ReadGuestInput()
         {
             Guest guest = new Guest();
-            string phoneNumber;
             guest.BirthdayDate = dateTimePicker3.Value;
+            guest.CheckIn = dateTimePicker1.Value;
+            guest.CheckOut = dateTimePicker2.Value;
+
             guest.Gender = (Gender)cmbGender.SelectedIndex;
+            guest.NumberOfGuest = (NumberOfGuest)cmbNumberOfGuest.SelectedIndex;
+            guest.NumberOfChildren = (NumberOfChildren)cmbNumberOfChildren.SelectedIndex;
+            guest.RoomTypes = (RoomTypes)cmbRoomType.SelectedIndex;
+            guest.Floors = (Floors)cmbFloor.SelectedIndex;
             guest.FirstName = txtFirstName.Text;
             guest.LastName = txtLastName.Text;
             guest.Email = txtEmail.Text;
 
-            phoneNumber = txtPhoneNumber.Text;
-            guest.PhoneNumber = Convert.ToInt32(txtPhoneNumber.Text);
+            guest.PhoneNumber = txtPhoneNumber.Text;
 
             Console.WriteLine(txtFirstName.Text);
             Console.WriteLine(txtLastName.Text);
@@ -51,10 +60,14 @@ namespace Assignmment7
             Console.WriteLine(txtEmail.Text);
             Console.WriteLine(dateTimePicker3.Value);
             Console.WriteLine(guest.Gender);
-
+            Console.WriteLine(guest.NumberOfGuest);
+            Console.WriteLine(guest.NumberOfChildren);
+            Console.WriteLine(guest.RoomTypes);
+            Console.WriteLine(guest.Floors);
+            Console.WriteLine(dateTimePicker1.Value);
+            Console.WriteLine(dateTimePicker2.Value);
             return guest;
         }
-
         /// <summary>
         /// method to read address input
         /// </summary>
@@ -85,10 +98,9 @@ namespace Assignmment7
         {
             Guest guest = ReadGuestInput();
             Address address =  ReadAdressInput();
-
+            //cmbNumberOfGuest.SelectedIndex = c;
             Console.WriteLine("Btn click");
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
