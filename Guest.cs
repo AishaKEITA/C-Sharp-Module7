@@ -13,12 +13,13 @@ namespace Assignmment7
         private string lastName;
         private int phoneNumber;
         private string email;
-        private int numberOfRooms;
         private DateTime _birthday;
         private DateTime _checkIn;
         private DateTime _checkOut;
         private double totalPrice;
 
+        private NumberOfGuest numberOfGuest;
+        private NumberOfChildren numberOfChildren;
         private Floors floor;
         private RoomTypes roomType;
         private Gender gender;
@@ -49,16 +50,19 @@ namespace Assignmment7
         /// <param name="floor"></param>
         public Guest(string firstName, string lastName, int phoneNumber,
             string email, Gender gender, Address address,
-            int numberOfRooms, int floors,
-            DateTime checkIn, DateTime checkOut, DateTime birthday, RoomTypes roomType, Floors floor)
+            int floors,
+            DateTime checkIn, DateTime checkOut, DateTime birthday,
+            NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
+            RoomTypes roomType, Floors floor)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
             this.email = email;
             this.gender = gender;
-            this.numberOfRooms = numberOfRooms;
             this.floor = floor;
+            this.numberOfGuest = numberOfGuest;
+            this.numberOfChildren = numberOfChildren;
             _checkIn = checkIn;
             _checkOut = checkOut;
             _birthday = birthday;
@@ -85,7 +89,7 @@ namespace Assignmment7
             phoneNumber = theOther.phoneNumber;
             email = theOther.email;
             this.address = new Address(theOther.address);
-            this.numberOfRooms = theOther.numberOfRooms;
+            this.numberOfGuest = theOther.numberOfGuest;
             this.floor = theOther.floor;
             _checkIn = theOther._checkIn;
             _checkOut = theOther._checkOut;
@@ -93,20 +97,48 @@ namespace Assignmment7
         }
 
         public Guest(string firstName, string lastName, int phoneNumber,
-            string email,int numberOfRooms, Floors floor, RoomTypes roomType, Gender gender, DateTime checkIn, DateTime checkOut, DateTime birthday, Address address)
+            string email, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
+            Floors floor, RoomTypes roomType,
+            Gender gender, DateTime checkIn, DateTime checkOut,
+            DateTime birthday, Address address)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
             this.email = email;
-            this.numberOfRooms = numberOfRooms;
+            this.numberOfGuest = numberOfGuest;
+            this.numberOfChildren = numberOfChildren;
             this.floor = floor;
             this.roomType = roomType;
             this.gender = gender;
             CheckIn = checkIn;
             CheckOut = checkOut;
             this.address = address;
-            BirthdayDateTime = birthday;
+            BirthdayDate = birthday;
+        }
+
+        public Guest(string firstName, string lastName,
+            int phoneNumber, string email, int year, double month,
+            double day, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
+            Floors floor, RoomTypes roomType,
+            Gender gender, DateTime checkIn,
+            DateTime checkOut, DateTime birthday, Address address)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            Year = year;
+            Month = month;
+            Day = day;
+            this.numberOfGuest = numberOfGuest;
+            this.floor = floor;
+            this.roomType = roomType;
+            this.gender = gender;
+            CheckIn = checkIn;
+            CheckOut = checkOut;
+            Birthday = birthday;
+            this.address = address;
         }
 
         /// <summary>
@@ -168,30 +200,33 @@ namespace Assignmment7
             }
         }
 
-        public DateTime BirthdayDateTime
+        /// <summary>
+        /// get and set birthday for the user
+        /// </summary>
+        public DateTime BirthdayDate
         {
-            get { return birthday; }
-            set { birthday = value; }
+            get { return _birthday; }
+            set { _birthday = value; }
         }
         /// <summary>
-        /// geter for number of rooms
+        /// get and set for number of guest
         /// </summary>
         /// <returns></returns>
-        public int GetNumberOfRooms()
+       public NumberOfGuest NumberOfGuest
         {
-            return numberOfRooms;
+            get { return numberOfGuest; }
+            set { numberOfGuest = value; }
         }
 
         /// <summary>
-        /// setter fot number of rooms
+        /// get and set for number of children
         /// </summary>
-        /// <param name="numberOfRooms"></param>
-        public void SetNumberOfRooms(int numberOfRooms)
+        /// <returns></returns>
+        public NumberOfChildren NumberOfChildren
         {
-            if (numberOfRooms >= 0)
-                this.numberOfRooms = numberOfRooms;
+            get { return numberOfChildren; }
+            set { numberOfChildren = value; }
         }
-
         /// <summary>
         /// method to get and set room types
         /// </summary>
@@ -243,6 +278,11 @@ namespace Assignmment7
                 totalPrice = CalculateTotalPrice();
             }
         }
+
+        public int Year { get; }
+        public double Month { get; }
+        public double Day { get; }
+        public DateTime Birthday { get; }
 
         /// <summary>
         /// method to get total price
