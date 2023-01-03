@@ -248,7 +248,7 @@ namespace Assignmment7
         /// <summary>
         /// method to check in
         /// </summary>
-        private DateTime CheckIn
+        public DateTime CheckIn
         {
             get { return _checkIn; }
             set
@@ -265,7 +265,7 @@ namespace Assignmment7
         /// <summary>
         /// method to checkout
         /// </summary>
-        private DateTime CheckOut
+        public DateTime CheckOut
         {
             get { return _checkOut; }
             set
