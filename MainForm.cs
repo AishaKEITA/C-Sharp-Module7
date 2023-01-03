@@ -13,7 +13,6 @@ namespace Assignmment7
     public partial class MainForm : Form
     {
         private GuestManager guestManager;
-        private Guest guest;
 
         public MainForm()
         {
@@ -28,80 +27,49 @@ namespace Assignmment7
             cmbGender.SelectedIndex = (int)Gender.Female;
         }
 
-        private void ReadGuestInput()
+        /// <summary>
+        /// read guest first name, last name,  email and phone number
+        /// </summary>
+        /// <returns></returns>
+        private Guest ReadGuestInput()
         {
-            ReadFirstName();
-            ReadLastName();
-            ReadPhoneNumber();
-            ReadEmailInput();
-            ReadStreetInput();
+            Guest guest = new Guest();
+            string phoneNumber;
             guest.BirthdayDate = dateTimePicker3.Value;
             guest.Gender = (Gender)cmbGender.SelectedIndex;
+            guest.FirstName = txtFirstName.Text;
+            guest.LastName = txtLastName.Text;
+            guest.Email = txtEmail.Text;
+
+            phoneNumber = txtPhoneNumber.Text;
+            guest.PhoneNumber = Convert.ToInt32(txtPhoneNumber.Text);
+
+            Console.WriteLine(txtFirstName.Text);
+            Console.WriteLine(txtLastName.Text);
+            Console.WriteLine(txtPhoneNumber.Text);
+
+            Console.WriteLine(txtEmail.Text);
             Console.WriteLine(dateTimePicker3.Value);
             Console.WriteLine(guest.Gender);
+
+            return guest;
         }
 
         /// <summary>
-        /// read first name of the guest
+        /// method to read address input
         /// </summary>
-        private void ReadFirstName()
+        /// <returns></returns>
+        private Address ReadAdressInput()
         {
-            guest = new Guest();
-            string name;
-            name = txtFirstName.Text;
-            name = name.Trim();
-            if (!string.IsNullOrEmpty(name))
-                guest.FirstName = name;
+            Address address = new Address();
+            address.City = txtAddress.Text;
+            address.City = txtCity.Text;
+            address.PostCode = txtPostCode.Text;
 
-            Console.WriteLine(name);
-        }
-
-        /// <summary>
-        /// read last name of the guest
-        /// </summary>
-        private void ReadLastName()
-        {
-            guest = new Guest();
-            string lastName;
-            lastName = txtLastName.Text;
-            lastName = lastName.Trim();
-            if (!string.IsNullOrEmpty(lastName))
-                guest.LastName = lastName;
-
-            Console.WriteLine(lastName);
-        }
-        /// <summary>
-        /// method to read phone number from the guest
-        /// </summary>
-        private void ReadPhoneNumber()
-        {
-            int phoneNumber;
-            phoneNumber = Convert.ToInt32(txtPhoneNumber.Text);
-            Console.WriteLine(phoneNumber);
-        }
-
-        /// <summary>
-        /// method to read guest email
-        /// </summary>
-        private void ReadEmailInput()
-        {
-            string email;
-            email = txtEmail.Text;
-            email = email.Trim();
-            if (string.IsNullOrEmpty(email)) ;
-            Console.WriteLine(email);
-        }
-
-        /// <summary>
-        /// method to read guest street
-        /// </summary>
-        private void ReadStreetInput()
-        {
-            string street;
-            street = txtAddress.Text;
-            street = street.Trim();
-            if (!string.IsNullOrEmpty(street)) ;
-            Console.WriteLine(street);
+            Console.WriteLine(txtAddress.Text);
+            Console.WriteLine(txtCity.Text);
+            Console.WriteLine(txtPostCode.Text);
+            return address;
         }
         private void label9_Click(object sender, EventArgs e)
         {
@@ -115,8 +83,15 @@ namespace Assignmment7
 
         private void btnAddGuest_Click_1(object sender, EventArgs e)
         {
-            ReadGuestInput();
+            Guest guest = ReadGuestInput();
+            Address address =  ReadAdressInput();
+
             Console.WriteLine("Btn click");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
