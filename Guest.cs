@@ -11,7 +11,7 @@ namespace Assignmment7
         //fields
         private string firstName;
         private string lastName;
-        private int phoneNumber;
+        private string phoneNumber;
         private string email;
         private DateTime _birthday;
         private DateTime _checkIn;
@@ -48,7 +48,7 @@ namespace Assignmment7
         /// <param name="birthday"></param>
         /// <param name="roomType"></param>
         /// <param name="floor"></param>
-        public Guest(string firstName, string lastName, int phoneNumber,
+        public Guest(string firstName, string lastName, string phoneNumber,
             string email, Gender gender, Address address,
             int floors,
             DateTime checkIn, DateTime checkOut, DateTime birthday,
@@ -96,7 +96,7 @@ namespace Assignmment7
             _birthday = theOther._birthday;
         }
 
-        public Guest(string firstName, string lastName, int phoneNumber,
+        public Guest(string firstName, string lastName, string phoneNumber,
             string email, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
             Floors floor, RoomTypes roomType,
             Gender gender, DateTime checkIn, DateTime checkOut,
@@ -118,7 +118,7 @@ namespace Assignmment7
         }
 
         public Guest(string firstName, string lastName,
-            int phoneNumber, string email, int year, double month,
+            string phoneNumber, string email, int year, double month,
             double day, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
             Floors floor, RoomTypes roomType,
             Gender gender, DateTime checkIn,
@@ -179,7 +179,7 @@ namespace Assignmment7
         /// <summary>
         /// method to get and set phone number
         /// </summary>
-        public int PhoneNumber
+        public string PhoneNumber
         {
             get { return phoneNumber; }
             set
