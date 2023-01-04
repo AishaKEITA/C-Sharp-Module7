@@ -117,9 +117,9 @@ namespace Assignmment7
             BirthdayDate = birthday;
         }
 
-        public Guest(string firstName, string lastName,
-            string phoneNumber, string email, int year, double month,
-            double day, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
+        /*public Guest(string firstName, string lastName,
+            string phoneNumber, string email, NumberOfGuest numberOfGuest,
+            NumberOfChildren numberOfChildren,
             Floors floor, RoomTypes roomType,
             Gender gender, DateTime checkIn,
             DateTime checkOut, DateTime birthday, Address address)
@@ -128,9 +128,6 @@ namespace Assignmment7
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
             this.email = email;
-            Year = year;
-            Month = month;
-            Day = day;
             this.numberOfGuest = numberOfGuest;
             this.floor = floor;
             this.roomType = roomType;
@@ -139,7 +136,7 @@ namespace Assignmment7
             CheckOut = checkOut;
             Birthday = birthday;
             this.address = address;
-        }
+        }*/
 
         /// <summary>
         /// method to get and set address
@@ -278,10 +275,6 @@ namespace Assignmment7
                 totalPrice = CalculateTotalPrice();
             }
         }
-
-        public int Year { get; }
-        public double Month { get; }
-        public double Day { get; }
         public DateTime Birthday { get; }
 
         /// <summary>
@@ -307,9 +300,9 @@ namespace Assignmment7
         /// method to calculate total price
         /// </summary>
         /// <returns></returns>
-        private double CalculateTotalPrice()
+        public double CalculateTotalPrice()
         {
-            double amountPerDay = 1500;
+            double amountPerDay =  1500;
             return (CheckOut - CheckIn).TotalDays * amountPerDay;
         }
     }
