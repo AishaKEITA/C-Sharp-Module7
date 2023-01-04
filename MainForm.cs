@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Assignmment7
 {
@@ -18,11 +23,21 @@ namespace Assignmment7
             this.Text = "Sha Hotel Boking system designed by Aisha";
             cmbGender.Items.AddRange(Enum.GetNames(typeof(Gender)));
             cmbGender.SelectedIndex = (int)Gender.Female;
-            cmbNumberOfGuest.Items.AddRange(Enum.GetNames(typeof(NumberOfGuest)));
-            cmbNumberOfGuest.SelectedIndex = (int)NumberOfGuest.Adult0;
 
-            cmbNumberOfChildren.Items.AddRange(Enum.GetNames(typeof(NumberOfChildren)));
-            cmbNumberOfChildren.SelectedIndex = (int)NumberOfChildren.child0;
+            cmbNumberOfGuest.DataSource = Enum.GetValues(typeof(NumberOfGuest))
+                            .Cast<NumberOfGuest>()
+                            .Select(x => (int)x)
+                            .ToList();
+
+
+            cmbNumberOfChildren.DataSource = Enum.GetValues(typeof(NumberOfChildren))
+                            .Cast<NumberOfChildren>()
+                            .Select(x => (int)x)
+                            .ToList();
+
+            Console.WriteLine(cmbNumberOfGuest.SelectedIndex);
+            Console.WriteLine(cmbNumberOfChildren.SelectedIndex);
+
 
 
             cmbRoomType.Items.AddRange(Enum.GetNames(typeof(RoomTypes)));
@@ -104,6 +119,13 @@ namespace Assignmment7
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCalculateBill_Click(object sender, EventArgs e)
+        {
+            Guest guest = new Guest();
+             ReadAdressInput();
+            lblShowPrice.Text = guest.CalculateTotalPrice().ToString("0.00");
         }
     }
 }
