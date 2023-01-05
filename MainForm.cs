@@ -3,6 +3,7 @@ using System.Collections;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Lifetime;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -10,7 +11,7 @@ namespace Assignmment7
 {
     public partial class MainForm : Form
     {
-        private GuestManager guestManager;
+        GuestManager guestManager;
 
         public MainForm()
         {
@@ -20,7 +21,16 @@ namespace Assignmment7
 
         private void IntializeGui()
         {
+           guestManager = new GuestManager();
+
             this.Text = "Sha Hotel Boking system designed by Aisha";
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
+            dateTimePicker3.CustomFormat = "yyyy-MM-dd";
             cmbGender.Items.AddRange(Enum.GetNames(typeof(Gender)));
             cmbGender.SelectedIndex = (int)Gender.Female;
 
@@ -29,22 +39,26 @@ namespace Assignmment7
                             .Select(x => (int)x)
                             .ToList();
 
-
+            Console.WriteLine(cmbNumberOfGuest.SelectedIndex);
             cmbNumberOfChildren.DataSource = Enum.GetValues(typeof(NumberOfChildren))
                             .Cast<NumberOfChildren>()
                             .Select(x => (int)x)
                             .ToList();
-
-            Console.WriteLine(cmbNumberOfGuest.SelectedIndex);
-            Console.WriteLine(cmbNumberOfChildren.SelectedIndex);
-
-
 
             cmbRoomType.Items.AddRange(Enum.GetNames(typeof(RoomTypes)));
             cmbRoomType.SelectedIndex = (int)RoomTypes.Single;
 
             cmbFloor.Items.AddRange(Enum.GetNames(typeof(Floors)));
             cmbFloor.SelectedIndex = (int)Floors.One;
+        }
+
+        private void UpdateGui()
+        {
+            lstGuest.Items.Clear();
+            string[] infoStrings = guestManager.GetInfoStringsList();
+            if (infoStrings != null)
+                lstGuest.Items.AddRange(infoStrings);
+
         }
         /// <summary>
         /// read guest first name, last name,  email and phone number
@@ -53,6 +67,7 @@ namespace Assignmment7
         private Guest ReadGuestInput()
         {
             Guest guest = new Guest();
+
             guest.BirthdayDate = dateTimePicker3.Value;
             guest.CheckIn = dateTimePicker1.Value;
             guest.CheckOut = dateTimePicker2.Value;
@@ -109,10 +124,22 @@ namespace Assignmment7
 
         }
 
+        /// <summary>
+        /// add guest to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddGuest_Click_1(object sender, EventArgs e)
         {
+            /*Guest guest = ReadGuestInput();
+            Address address =  ReadAdressInput();*/
             Guest guest = ReadGuestInput();
-            Address address =  ReadAdressInput();
+            if (guestManager.AddGuest(guest))
+            {
+                UpdateGui();
+            }
+
+            UpdateGui();
             //cmbNumberOfGuest.SelectedIndex = c;
             Console.WriteLine("Btn click");
         }
@@ -121,11 +148,41 @@ namespace Assignmment7
 
         }
 
+        /// <summary>
+        /// method to calculate the total payment for guest
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCalculateBill_Click(object sender, EventArgs e)
         {
-            Guest guest = new Guest();
-             ReadAdressInput();
+            Guest guest = ReadGuestInput();
             lblShowPrice.Text = guest.CalculateTotalPrice().ToString("0.00");
+        }
+
+        private void lstGuest_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstGuest_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+
+        }
+
+        /// <summary>
+        /// edit button to change booking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditBooking_Click(object sender, EventArgs e)
+        {
+            int index = lstGuest.SelectedIndex;
+            if (index >= 0) ;
+            Guest guest = ReadGuestInput();
+            bool ok = guestManager.ChangeGuestAt(guest, index);
+            if (ok)
+                UpdateGui();
         }
     }
 }
