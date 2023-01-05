@@ -13,9 +13,9 @@ namespace Assignmment7
         private string lastName;
         private string phoneNumber;
         private string email;
-        private DateTime _birthday;
-        private DateTime _checkIn;
-        private DateTime _checkOut;
+        private DateTime birthday;
+        private DateTime checkIn;
+        private DateTime checkOut;
         private double totalPrice;
 
         private NumberOfGuest numberOfGuest;
@@ -63,9 +63,9 @@ namespace Assignmment7
             this.floor = floor;
             this.numberOfGuest = numberOfGuest;
             this.numberOfChildren = numberOfChildren;
-            _checkIn = checkIn;
-            _checkOut = checkOut;
-            _birthday = birthday;
+            this.checkIn = checkIn;
+            this.checkOut = checkOut;
+            this.birthday = birthday;
             this.roomType = roomType;
 
 
@@ -91,11 +91,27 @@ namespace Assignmment7
             this.address = new Address(theOther.address);
             this.numberOfGuest = theOther.numberOfGuest;
             this.floor = theOther.floor;
-            _checkIn = theOther._checkIn;
-            _checkOut = theOther._checkOut;
-            _birthday = theOther._birthday;
+            birthday = theOther.birthday;
+            checkOut = theOther.checkOut;
+            birthday = theOther.birthday;
         }
 
+        /// <summary>
+        /// guest constructor with parameters
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="email"></param>
+        /// <param name="numberOfGuest"></param>
+        /// <param name="numberOfChildren"></param>
+        /// <param name="floor"></param>
+        /// <param name="roomType"></param>
+        /// <param name="gender"></param>
+        /// <param name="checkIn"></param>
+        /// <param name="checkOut"></param>
+        /// <param name="birthday"></param>
+        /// <param name="address"></param>
         public Guest(string firstName, string lastName, string phoneNumber,
             string email, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren,
             Floors floor, RoomTypes roomType,
@@ -116,27 +132,6 @@ namespace Assignmment7
             this.address = address;
             BirthdayDate = birthday;
         }
-
-        /*public Guest(string firstName, string lastName,
-            string phoneNumber, string email, NumberOfGuest numberOfGuest,
-            NumberOfChildren numberOfChildren,
-            Floors floor, RoomTypes roomType,
-            Gender gender, DateTime checkIn,
-            DateTime checkOut, DateTime birthday, Address address)
-        {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.phoneNumber = phoneNumber;
-            this.email = email;
-            this.numberOfGuest = numberOfGuest;
-            this.floor = floor;
-            this.roomType = roomType;
-            this.gender = gender;
-            CheckIn = checkIn;
-            CheckOut = checkOut;
-            Birthday = birthday;
-            this.address = address;
-        }*/
 
         /// <summary>
         /// method to get and set address
@@ -202,8 +197,8 @@ namespace Assignmment7
         /// </summary>
         public DateTime BirthdayDate
         {
-            get { return _birthday; }
-            set { _birthday = value; }
+            get { return birthday; }
+            set { birthday = value; }
         }
         /// <summary>
         /// get and set for number of guest
@@ -247,16 +242,9 @@ namespace Assignmment7
         /// </summary>
         public DateTime CheckIn
         {
-            get { return _checkIn; }
-            set
-            {
-                if (value != _checkIn && value < _checkOut)
-                {
-                    _checkIn = value;
-                }
+            get { return birthday; }
+            set { checkIn = value; }
                 //Ui update for totalprice
-                totalPrice = CalculateTotalPrice();
-            }
         }
 
         /// <summary>
@@ -264,19 +252,21 @@ namespace Assignmment7
         /// </summary>
         public DateTime CheckOut
         {
-            get { return _checkOut; }
-            set
-            {
-                if (value != _checkOut && value < _checkIn)
-                {
-                    _checkOut = value;
-                }
-                //ui update for totalprice
-                totalPrice = CalculateTotalPrice();
-            }
+            get { return checkOut; }
+            set { checkOut = value; }
+                //ui update for totalprice            }
         }
-        public DateTime Birthday { get; }
 
+        /// <summary>
+        /// get check in and check out dates in string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string strOut = $"{firstName +  " " + lastName, -20}" + $"{checkIn.ToLongDateString(),-25}" +
+               $"{" ",6} {checkOut.ToLongDateString(),25}";
+            return strOut;
+        }
         /// <summary>
         /// method to get total price
         /// </summary>
