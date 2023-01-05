@@ -292,8 +292,22 @@ namespace Assignmment7
         /// <returns></returns>
         public double CalculateTotalPrice()
         {
-            double amountPerDay =  1500;
-            return (CheckOut - CheckIn).TotalDays * amountPerDay;
+            double amountPerAdult =  1500;
+            double amountPerChild = 750;
+            int numAdult = 1;
+            int numChild;
+            numAdult = (int)numberOfGuest;
+            numChild = (int)numberOfChildren;
+
+          if (numChild > 0)
+            {
+                totalPrice =  (CheckOut - CheckIn).TotalDays * numAdult * amountPerAdult;
+            }
+          if (numAdult > 0)
+            {
+                totalPrice = (CheckOut - CheckIn).TotalDays * numAdult * amountPerAdult + numChild * amountPerChild;
+            }
+            return totalPrice;
         }
     }
 }
