@@ -133,7 +133,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(176, 35);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(236, 31);
             this.txtFirstName.TabIndex = 5;
@@ -141,7 +141,7 @@
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(176, 83);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(236, 31);
             this.txtLastName.TabIndex = 6;
@@ -149,7 +149,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(242, 288);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(270, 31);
             this.txtEmail.TabIndex = 7;
@@ -157,7 +157,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Location = new System.Drawing.Point(196, 233);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(336, 31);
             this.txtPhoneNumber.TabIndex = 8;
@@ -165,7 +165,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(132, 356);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(272, 31);
             this.txtAddress.TabIndex = 9;
@@ -173,15 +173,15 @@
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(110, 413);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(146, 31);
             this.txtCity.TabIndex = 10;
             // 
             // txtPostCode
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(400, 413);
-            this.txtPostCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostCode.Location = new System.Drawing.Point(425, 412);
+            this.txtPostCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(134, 31);
             this.txtPostCode.TabIndex = 11;
@@ -228,9 +228,9 @@
             // groupBox1
             // 
             this.groupBox1.Location = new System.Drawing.Point(96, 65);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(16, 15);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
@@ -239,9 +239,9 @@
             // groupBox2
             // 
             this.groupBox2.Location = new System.Drawing.Point(1280, 298);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(16, 15);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
@@ -278,9 +278,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Location = new System.Drawing.Point(16, 65);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(1900, 531);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
@@ -291,7 +291,7 @@
             this.lstGuest.FormattingEnabled = true;
             this.lstGuest.ItemHeight = 25;
             this.lstGuest.Location = new System.Drawing.Point(1126, 75);
-            this.lstGuest.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lstGuest.Margin = new System.Windows.Forms.Padding(6);
             this.lstGuest.Name = "lstGuest";
             this.lstGuest.Size = new System.Drawing.Size(704, 179);
             this.lstGuest.TabIndex = 29;
@@ -300,7 +300,7 @@
             // dateTimePicker3
             // 
             this.dateTimePicker3.Location = new System.Drawing.Point(176, 125);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(236, 31);
             this.dateTimePicker3.TabIndex = 28;
@@ -310,9 +310,9 @@
             this.grpTotalPrice.Controls.Add(this.lblShowPrice);
             this.grpTotalPrice.Controls.Add(this.lblPriceToBePaid);
             this.grpTotalPrice.Location = new System.Drawing.Point(1076, 356);
-            this.grpTotalPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpTotalPrice.Margin = new System.Windows.Forms.Padding(4);
             this.grpTotalPrice.Name = "grpTotalPrice";
-            this.grpTotalPrice.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpTotalPrice.Padding = new System.Windows.Forms.Padding(4);
             this.grpTotalPrice.Size = new System.Drawing.Size(524, 152);
             this.grpTotalPrice.TabIndex = 21;
             this.grpTotalPrice.TabStop = false;
@@ -330,7 +330,7 @@
             // lblPriceToBePaid
             // 
             this.lblPriceToBePaid.AutoSize = true;
-            this.lblPriceToBePaid.Location = new System.Drawing.Point(8, 73);
+            this.lblPriceToBePaid.Location = new System.Drawing.Point(8, 63);
             this.lblPriceToBePaid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPriceToBePaid.Name = "lblPriceToBePaid";
             this.lblPriceToBePaid.Size = new System.Drawing.Size(168, 25);
@@ -340,12 +340,13 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(1413, 257);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(200, 56);
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete Booking";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label18
             // 
@@ -360,7 +361,7 @@
             // btnEditBooking
             // 
             this.btnEditBooking.Location = new System.Drawing.Point(1161, 257);
-            this.btnEditBooking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditBooking.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditBooking.Name = "btnEditBooking";
             this.btnEditBooking.Size = new System.Drawing.Size(180, 56);
             this.btnEditBooking.TabIndex = 22;
@@ -371,7 +372,7 @@
             // btnCalculateBill
             // 
             this.btnCalculateBill.Location = new System.Drawing.Point(664, 471);
-            this.btnCalculateBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalculateBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalculateBill.Name = "btnCalculateBill";
             this.btnCalculateBill.Size = new System.Drawing.Size(366, 52);
             this.btnCalculateBill.TabIndex = 11;
@@ -392,7 +393,7 @@
             // btnAddGuest
             // 
             this.btnAddGuest.Location = new System.Drawing.Point(284, 471);
-            this.btnAddGuest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddGuest.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddGuest.Name = "btnAddGuest";
             this.btnAddGuest.Size = new System.Drawing.Size(344, 52);
             this.btnAddGuest.TabIndex = 21;
@@ -414,7 +415,7 @@
             // 
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Location = new System.Drawing.Point(176, 187);
-            this.cmbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(236, 33);
             this.cmbGender.TabIndex = 19;
@@ -444,9 +445,9 @@
             this.grpYourChoice.Controls.Add(this.cmbRoomType);
             this.grpYourChoice.Controls.Add(this.cmbNumberOfGuest);
             this.grpYourChoice.Location = new System.Drawing.Point(588, 29);
-            this.grpYourChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpYourChoice.Margin = new System.Windows.Forms.Padding(4);
             this.grpYourChoice.Name = "grpYourChoice";
-            this.grpYourChoice.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpYourChoice.Padding = new System.Windows.Forms.Padding(4);
             this.grpYourChoice.Size = new System.Drawing.Size(480, 419);
             this.grpYourChoice.TabIndex = 20;
             this.grpYourChoice.TabStop = false;
@@ -456,7 +457,7 @@
             // 
             this.cmbNumberOfChildren.FormattingEnabled = true;
             this.cmbNumberOfChildren.Location = new System.Drawing.Point(272, 96);
-            this.cmbNumberOfChildren.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbNumberOfChildren.Margin = new System.Windows.Forms.Padding(6);
             this.cmbNumberOfChildren.Name = "cmbNumberOfChildren";
             this.cmbNumberOfChildren.Size = new System.Drawing.Size(196, 33);
             this.cmbNumberOfChildren.TabIndex = 14;
@@ -474,7 +475,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(212, 329);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(248, 31);
             this.dateTimePicker2.TabIndex = 12;
@@ -482,7 +483,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(212, 281);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(248, 31);
             this.dateTimePicker1.TabIndex = 11;
@@ -541,7 +542,7 @@
             // 
             this.cmbFloor.FormattingEnabled = true;
             this.cmbFloor.Location = new System.Drawing.Point(76, 212);
-            this.cmbFloor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFloor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFloor.Name = "cmbFloor";
             this.cmbFloor.Size = new System.Drawing.Size(218, 33);
             this.cmbFloor.TabIndex = 2;
@@ -550,7 +551,7 @@
             // 
             this.cmbRoomType.FormattingEnabled = true;
             this.cmbRoomType.Location = new System.Drawing.Point(132, 152);
-            this.cmbRoomType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRoomType.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRoomType.Name = "cmbRoomType";
             this.cmbRoomType.Size = new System.Drawing.Size(336, 33);
             this.cmbRoomType.TabIndex = 1;
@@ -559,7 +560,7 @@
             // 
             this.cmbNumberOfGuest.FormattingEnabled = true;
             this.cmbNumberOfGuest.Location = new System.Drawing.Point(272, 33);
-            this.cmbNumberOfGuest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNumberOfGuest.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNumberOfGuest.Name = "cmbNumberOfGuest";
             this.cmbNumberOfGuest.Size = new System.Drawing.Size(196, 33);
             this.cmbNumberOfGuest.TabIndex = 0;
@@ -588,7 +589,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.groupBox3.ResumeLayout(false);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignmment7
 {
-    internal class GuestManager
+    class GuestManager
     {
         //method to add guest
         // method to edit guest
@@ -18,7 +18,6 @@ namespace Assignmment7
         {
             guests = new List<Guest>();
         }
-
 
         /// <summary>
         /// method to count the number of guests
@@ -46,13 +45,13 @@ namespace Assignmment7
         /// <param name="gender"></param>
         /// <param name="address"></param>
         /// <returns></returns>
-        public bool AddGuest(string firstName, string lastName, int phoneNumber, string email,
-            int year, double month, double day, int numberOfRooms, DateTime _checkIn, DateTime _checkOut,
+        public bool AddGuest(string firstName, string lastName, string phoneNumber, string email,
+            int year, double month, double day, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren, DateTime _checkIn, DateTime _checkOut, DateTime _birthday,
            Floors floor, RoomTypes roomType, Gender gender, Address address)
         {
 
-            Guest guest = new Guest(firstName, lastName, phoneNumber, email, year, month, day,
-                numberOfRooms, floor, roomType, gender, _checkIn, _checkOut, address);
+            Guest guest = new Guest(firstName, lastName, phoneNumber, email,
+                numberOfGuest, numberOfChildren, floor, roomType, gender, _checkIn, _checkOut, _birthday, address);
             guests.Add(guest);
             return true;
         }
@@ -68,6 +67,22 @@ namespace Assignmment7
                 return false;
             guests.Add(GuestIn);
             return true ;
+        }
+
+        /// <summary>
+        /// chnage guest info into string
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetInfoStringsList()
+        {
+            string[] infoStrings = new string[guests.Count];
+
+            for (int i = 0; i < infoStrings.Length; i++)
+            {
+                infoStrings[i] = guests[i].ToString();
+            }
+
+            return infoStrings;
         }
 
         /// <summary>
@@ -105,6 +120,23 @@ namespace Assignmment7
             if ((GuestIn == null) || !CheckIndex(index))
                 return false;
              guests[index] = GuestIn;
+            return true;
+        }
+
+        /// <summary>
+        /// method to delete guest at a specific postion
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public bool DeleteGuestAt(int index)
+        {
+            if (!CheckIndex(index))
+            {
+                return false;
+            }
+
+            guests.RemoveAt(index);
+
             return true;
         }
     }

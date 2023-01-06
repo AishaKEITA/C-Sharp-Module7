@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace Assignmment7
 {
+    //enum for floors
     public enum Floors
     {
-        Floor1 = 1,
-        Floor2 = 2,
-        Floor3 = 3,
-        Floor4 = 4,
-        Floor5 = 5,
-        Floor6 = 6
+        One,
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+        Seven,
+        Eight,
+        Nine,
+        Ten,
     }
 }

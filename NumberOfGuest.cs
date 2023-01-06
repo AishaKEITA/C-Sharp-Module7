@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignmment7
 {
+    //enum for number of guest
     public enum NumberOfGuest
     {
+        Adult0 = 0,
         Adult1 = 1,
         Adult2 = 2,
         Adult3 = 3,

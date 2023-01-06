@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Assignmment7
 {
+    //enum for room types
     public enum RoomTypes
     {
         Single,
-        Double
+        Double,
+        PenHouse,
     }
 }

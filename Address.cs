@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace Assignmment7
 {
-    internal class ContactInfo
+    internal class Address
     {
         //fields
         private string city;
         private string postCode;
-        private ContactInfo contact;
-        private Gender gender;
+        private string street;
+        private Address address;
         /// <summary>
         /// constructor contact info
         /// </summary>
         /// <param name="city"></param>
         /// <param name="postCode"></param>
-        public ContactInfo(string city, string postCode, Gender gender)
+        public Address(string city, string postCode, string street)
         {
             this.city = city;
             this.postCode = postCode;
-            this.gender = gender;
+            this.street = street;
         }
          /// <summary>
         /// contact constructor
         /// </summary>
-        public ContactInfo()
+        public Address()
         {
         }
         /// <summary>
@@ -48,13 +48,20 @@ namespace Assignmment7
             set { postCode = value; }
         }
 
+        public string Street
+        {
+            get { return street; }
+            set { street = value; }
+        }
+
+
         /// <summary>
         /// address constructor with a parameter
         /// </summary>
         /// <param name="address"></param>
-        public ContactInfo(ContactInfo address)
+        public Address(Address address)
         {
-            this.contact = address;
+            this.address = address;
         }
 
         /// <summary>
