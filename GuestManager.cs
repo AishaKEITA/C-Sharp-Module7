@@ -34,9 +34,6 @@ namespace Assignmment7
         /// <param name="lastName"></param>
         /// <param name="phoneNumber"></param>
         /// <param name="email"></param>
-        /// <param name="year"></param>
-        /// <param name="month"></param>
-        /// <param name="day"></param>
         /// <param name="numberOfRooms"></param>
         /// <param name="_checkIn"></param>
         /// <param name="_checkOut"></param>
@@ -46,7 +43,7 @@ namespace Assignmment7
         /// <param name="address"></param>
         /// <returns></returns>
         public bool AddGuest(string firstName, string lastName, string phoneNumber, string email,
-            int year, double month, double day, NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren, DateTime _checkIn, DateTime _checkOut, DateTime _birthday,
+           NumberOfGuest numberOfGuest, NumberOfChildren numberOfChildren, DateTime _checkIn, DateTime _checkOut, DateTime _birthday,
            Floors floor, RoomTypes roomType, Gender gender, Address address)
         {
 
